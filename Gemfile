@@ -13,5 +13,4 @@ end
 
 gem "wdm", "~> 0.2.0", :platforms => [:mingw, :x64_mingw, :mswin]
 
-gem 'jekyll-sitemap' # Jekyll Sitemap Generator Plugin
-
+gem "jekyll-sitemap" # Jekyll Sitemap Generator Plugin
