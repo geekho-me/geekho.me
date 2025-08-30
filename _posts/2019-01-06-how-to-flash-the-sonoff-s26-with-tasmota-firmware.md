@@ -1,8 +1,10 @@
 ---
 title: "How To: Flash the Sonoff S26 with Tasmota firmware"
 date: 2019-01-06 12:00:00 +0000
-categories: [How-To, Sonoff]
+categories: [how-to, sonoff]
 tags: [how-to, sonoff, smart-plug, tasmota]
+description: "Comprehensive guide to flashing the Sonoff S26 smart plug with Tasmota firmware. Includes step-by-step instructions, hardware teardown, soldering tips, and configuration for secure, cloud-free smart home automation."
+keywords: ["Sonoff S26", "Tasmota firmware", "smart plug", "ESP8266", "flashing guide", "home automation", "soldering", "WiFi plug", "cloud-free"]
 ---
 
 ## Introduction

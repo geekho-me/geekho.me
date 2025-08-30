@@ -1,17 +1,19 @@
 ---
 title: "How To: Monitor APC Smart-UPS 1500"
 date: 2025-08-12 12:00:00 +0000
-categories: [How-To, Infrastructure, Raspberry-Pi]
+categories: [how-to, infrastructure, raspberry-pi]
 tags: [how-to, infrastructure, ups, raspberry-pi]
+description: "Step-by-step guide to monitoring an APC Smart-UPS 1500 using a Raspberry Pi and Network UPS Tools (NUT). Includes hardware setup, Modbus configuration, and compiling NUT from source."
+keywords: ["APC Smart-UPS", "Raspberry Pi", "NUT", "Network UPS Tools", "UPS monitoring", "Modbus", "Linux", "infrastructure"]
 ---
 
 ## Introduction
 
 So I recently picked up a used APC Smart-UPS 1500I (with an apparently new battery) to protect my NAS and other Servers at home from power outages, and I wanted a way to monitor the power load in the event of a outage. The obvious goto was [NUT aka Network UPS Tools](https://networkupstools.org/), which lists my UPS as a supported model. I also wanted the monitoring to be standalone and not reliant on existing hardware, so I opted to use a spare Raspberry Pi 3 model B v1.2 I had sitting around.
 
-## Configuring Raspberry Pi
+## Configuring the Raspberry Pi
 For the operating system I opted to use Raspberry Pi OS Lite (64 bit), this is a trimmed down operating system (without a desktop interface) based on Debian Bookworm.
-I flashed it to a 64gb Microsd card using the official Raspberry Pi Imager.
+I flashed it to a 64gb MicroSD card using the official Raspberry Pi Imager.
 Once booted up first thing todo is to update the OS with the latest patches:
 
 ```bash
