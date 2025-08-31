@@ -22,13 +22,13 @@ The Raspberry Pi cameras give you the choice of the standard lens or the wide le
 #### Standard Lens
 
 <div style="text-align:center;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KpiGyeuBHkc?si=vC1eppwcMIlOKS0d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-XO-tcB5v0s?si=F0TEFVCpZQZM3q4W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 #### Wide Lens
 
 <div style="text-align:center;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/yE3hZzSK3po?si=KS2z3jABekl_NC9t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/T14k37uceLE?si=MHNjvL2RAqY_4mxQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 Personally I went with the standard lens. I tend to print small to medium prints so I did not feel the need for the wider view. If you print bigger things like cosplay helmets you may benefit from the wider lens view.
@@ -54,6 +54,8 @@ The only additional hardware required is the appropriate FFC ([Flat Flexible Cab
 From memory I used M2x5mm screws to attach the camera to the mount. The mount itself is friction fit into the printer. It is intentionally a tight fit to ensure it does not vibrate loose mid-print. You will need to fold the flex cable 90 degrees so it can exit out the front of the case, take care not to damage the traces on the cable.
 
 The Pi Zero I installed in a [UniPiCase Pi Zero Case](https://www.unipicase.com/products/unipicase-zero/) which I then attached to the side of my P1S using [3M Command Strips](https://www.command.com/3M/en_US/command/how-to-use/picture-hanging-strips/).
+
+![Pi Mount](/assets/img/2025-08-28/external_512x385.webp)
 
 ## Configuring the Raspberry Pi
 For the operating system I used `Raspberry Pi OS Lite (64 bit)`, which is based on Debian 12 (Bookworm).
