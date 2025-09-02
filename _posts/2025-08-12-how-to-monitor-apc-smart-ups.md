@@ -1,27 +1,30 @@
 ---
 title: "How To: Monitor APC Smart-UPS 1500"
 date: 2025-08-12 12:00:00 +0000
+last_modified_at: 2025-09-02
 categories: [how-to, infrastructure, raspberry-pi]
 tags: [how-to, infrastructure, ups, raspberry-pi]
 description: "Step-by-step guide to monitoring an APC Smart-UPS 1500 using a Raspberry Pi and Network UPS Tools (NUT). Includes hardware setup, Modbus configuration, and compiling NUT from source."
 keywords: ["APC Smart-UPS", "Raspberry Pi", "NUT", "Network UPS Tools", "UPS monitoring", "Modbus", "Linux", "infrastructure"]
+image: /assets/img/2025-08-12/apc-smartups-1500-social-1200x630.jpg
+image_alt: "How to monitor APC Smart-UPS 1500"
 ---
 
 ## Introduction
 
-So I recently picked up a used APC Smart-UPS 1500I (with an apparently new battery) to protect my NAS and other Servers at home from power outages, and I wanted a way to monitor the power load in the event of a outage. The obvious goto was [NUT aka Network UPS Tools](https://networkupstools.org/), which lists my UPS as a supported model. I also wanted the monitoring to be standalone and not reliant on existing hardware, so I opted to use a spare Raspberry Pi 3 model B v1.2 I had sitting around.
+So I recently picked up a used APC Smart-UPS 1500I (with an apparently new battery) to protect my NAS and other Servers at home from power outages, and I wanted a way to monitor the power load in the event of an outage. The obvious go-to was [NUT aka Network UPS Tools](https://networkupstools.org/), which lists my UPS as a supported model. I also wanted the monitoring to be standalone and not reliant on existing hardware, so I opted to use a spare Raspberry Pi 3 model B v1.2 I had sitting around.
 
 ## Configuring the Raspberry Pi
-For the operating system I opted to use Raspberry Pi OS Lite (64 bit), this is a trimmed down operating system (without a desktop interface) based on Debian Bookworm.
-I flashed it to a 64gb MicroSD card using the official Raspberry Pi Imager.
-Once booted up first thing todo is to update the OS with the latest patches:
+For the operating system I opted to use Raspberry Pi OS Lite (64-bit), this is a trimmed down operating system (without a desktop interface) based on Debian Bookworm.
+I flashed it to a 64 GB microSD card using the official Raspberry Pi Imager.
+Once booted up first thing to do is to update the OS with the latest patches:
 
 ```bash
 sudo apt update
 sudo apt upgrade -y
 ```
 
-The Raspberry Pi is connected to the UPS via USB (USB A to USB B cable). If you use the basic apt version of NUT it only comes with a generic driver which gives you basic health stats about the UPS but is missing important information like the power load.
+The Raspberry Pi is connected to the UPS via USB (USB A to USB B cable). The apt package version of NUT typically includes generic drivers which miss detailed metrics like load; compiling NUT with apc_modbus exposes those.
 
 We can confirm the Pi can see the UPS:
 
@@ -38,7 +41,7 @@ An optional step is disabling USB autosuspend (this can help some APC units stay
 ```bash
 sudo sed -i '1 s/$/ usbcore.autosuspend=-1/' /boot/firmware/cmdline.txt
 ```
-A reboot to required to apply the setting.
+A reboot is required to apply the setting.
 
 
 ## Configuring the UPS
@@ -158,7 +161,7 @@ sudo nano /usr/local/ups/etc/upsmon.conf
 ```
 
 ```
-MONITOR apc-1500@localhost 1 admin secret master
+MONITOR apc-1500@localhost 1 monuser a-strong-password master
 ```
 
 `apc-1500` corresponds to the name you gave the UPS in `ups.conf`
@@ -192,11 +195,11 @@ sudo nano /usr/local/ups/etc/upsd.users
 
 ```
 [monuser]
-  password = secret
+  password = a-strong-password
   admin master
 ```
 
-***WARNING!*** Use a stronger password than `secret`!
+***WARNING!*** Use a stronger password than `a-strong-password`!
 
 Next we create the service account for NUT to use:
 
@@ -282,7 +285,7 @@ driver.parameter.pollinterval: 2
 driver.parameter.port: auto
 driver.parameter.synchronous: auto
 driver.state: quiet
-driver.version: 2.8.3
+driver.version: 2.8.4
 driver.version.internal: 0.12
 driver.version.usb: libusb-1.0.26 (API: 0x01000109)
 experimental.output.energy: 504299

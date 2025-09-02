@@ -14,6 +14,8 @@ image_alt: "How to enable RTSP on TP-Link Tapo cameras"
 
 TP-Link Tapo cameras are an affordable and easy way to get into security cameras. They typically can be powered by USB, use Wi-Fi, and have cloud connectivity if you want it. They also have the ability to enable an RTSP server so you can integrate them into other services like `Frigate`, `Home Assistant`, `go2rtc`, etc.
 
+In this example I will run through the steps of enabling the RTSP on a [TP-Link Tapo C100](https://www.tp-link.com/home-networking/cloud-camera/tapo-c100/).
+
 ## Enabling the RTSP Service
 
 1. Assuming your camera is already set up and working, open the Tapo app (Android shown).
