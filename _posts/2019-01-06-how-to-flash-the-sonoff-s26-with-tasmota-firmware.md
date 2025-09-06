@@ -1,7 +1,7 @@
 ---
 title: "How To: Flash the Sonoff S26 with Tasmota firmware"
 date: 2019-01-06 12:00:00 +0000
-last_modified_at: 2025-09-02
+last_modified_at: 2025-09-06
 categories: [how-to, sonoff]
 tags: [how-to, sonoff, smart-plug, tasmota]
 description: "Comprehensive guide to flashing the Sonoff S26 smart plug with Tasmota firmware. Includes step-by-step instructions, hardware teardown, soldering tips, and configuration for secure, cloud-free smart home automation."
@@ -33,7 +33,8 @@ In comparison to the older Sonoff S20 model, the S26 is slightly smaller in over
 
 ## Flashing Tasmota
 
-***WARNING!*** Ensure the plug is not connected during disassembly or flashing firmware.
+>Ensure the plug is not connected to mains power during disassembly or flashing firmware.
+{: .prompt-danger }
 
 To flash the Sonoff Tasmota firmware to the S26 we need to open the plug and solder some connectors.
 

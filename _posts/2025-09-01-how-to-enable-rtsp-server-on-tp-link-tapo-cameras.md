@@ -78,7 +78,8 @@ Example RTSP stream via VLC:
 * Two-way audio does not work in RTSP mode.
 * Tapo cameras do not support the download of snapshots.
 
-***WARNING!*** The RTSP & ONVIF ports should not be exposed to the public internet. If you want remote connectivity use a service like a VPN or another service (e.g. `Home Assistant`) to make the camera feed available. You may also want to consider disabling [UPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play) on your router to avoid accidental exposure.
+>The RTSP & ONVIF ports should not be exposed to the public internet. If you want remote connectivity use a service like a VPN or another service (e.g. `Home Assistant`) to make the camera feed available. You may also want to consider disabling [UPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play) on your router to avoid accidental exposure.
+{: .prompt-warning }
 
 You should also consider isolating cameras on an IoT VLAN where feasible.
 

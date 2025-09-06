@@ -1,7 +1,7 @@
 ---
 title: "Bambu Lab P1S Camera Upgrade"
 date: 2025-08-28 12:00:00 +0000
-last_modified_at: 2025-09-02
+last_modified_at: 2025-09-06
 categories: [how-to, 3d-printing, raspberry-pi]
 tags: [3d-printing, bambu lab, how-to, raspberry-pi]
 description: "Practical guide to upgrading the Bambu Lab P1S chamber camera using a Raspberry Pi Camera Module 3 and a Pi Zero 2 W. Covers mount options, hardware setup, GPU memory tuning, compiling camera-streamer, and exposing an MJPEG stream for OctoPrint/Obico."
@@ -137,7 +137,8 @@ sudo apt install git
 
 We will download and compile `camera-streamer` source code, I checked out the latest release (`0.3.0` at the time of writing):
 
-***WARNING!*** The compile time is slow on the Raspberry Pi Zero 2 W, so grab a coffee and wait.
+> The compile time is slow on the Raspberry Pi Zero 2 W, so grab a coffee and wait.
+{: .prompt-info }
 
 ```bash
 git clone https://github.com/ayufan/camera-streamer.git --recursive
@@ -150,7 +151,7 @@ sudo make install
 
 Once successfully compiled we can now enable the `camera-streamer` service so it starts on boot:
 
-***WARNING!*** If you used a different camera you will need to copy the relevant service file from the `service` folder.
+If you used a different camera you will need to copy the relevant service file from the `service` folder.
 
 ```bash
 sudo cp ./service/camera-streamer-raspi-v3-12MP.service /etc/systemd/system/camera-streamer.service

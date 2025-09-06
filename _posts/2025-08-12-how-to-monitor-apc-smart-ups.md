@@ -1,7 +1,7 @@
 ---
 title: "How To: Monitor APC Smart-UPS 1500"
 date: 2025-08-12 12:00:00 +0000
-last_modified_at: 2025-09-02
+last_modified_at: 2025-09-06
 categories: [how-to, infrastructure, raspberry-pi]
 tags: [how-to, infrastructure, ups, raspberry-pi]
 description: "Step-by-step guide to monitoring an APC Smart-UPS 1500 using a Raspberry Pi and Network UPS Tools (NUT). Includes hardware setup, Modbus configuration, and compiling NUT from source."
@@ -176,7 +176,8 @@ sudo nano /usr/local/ups/etc/upsd.conf
 LISTEN 0.0.0.0 3493
 ```
 
-***WARNING!*** This configuration listens on all network interfaces.
+>This configuration listens on all network interfaces.
+{: .prompt-warning }
 
 Next we configure which mode we want NUT to operate under:
 ```bash
@@ -199,7 +200,8 @@ sudo nano /usr/local/ups/etc/upsd.users
   admin master
 ```
 
-***WARNING!*** Use a stronger password than `a-strong-password`!
+>Use a stronger password than `a-strong-password`!
+{: .prompt-warning }
 
 Next we create the service account for NUT to use:
 
