@@ -1,7 +1,7 @@
 ---
 title: "Bambu Lab P1S Camera Upgrade"
 date: 2025-08-28 12:00:00 +0000
-last_modified_at: 2025-09-06
+last_modified_at: 2025-09-08
 categories: [how-to, 3d-printing, raspberry-pi]
 tags: [3d-printing, bambu lab, how-to, raspberry-pi]
 description: "Practical guide to upgrading the Bambu Lab P1S chamber camera using a Raspberry Pi Camera Module 3 and a Pi Zero 2 W. Covers mount options, hardware setup, GPU memory tuning, compiling camera-streamer, and exposing an MJPEG stream for OctoPrint/Obico."
@@ -23,9 +23,6 @@ I started looking into alternative camera options and the [Raspberry Pi Camera M
 The Raspberry Pi cameras give you the choice of the standard lens or the wide lens, the field of view being 66 degrees vs 102 degrees, the videos below will give you a better real-world idea:
 
 
-{% include embed/youtube.html id='-XO-tcB5v0s' %}
-
-
 #### Standard Lens
 
 <div style="text-align:center;">
@@ -44,7 +41,7 @@ Personally I went with the standard lens. I tend to print small to medium prints
 
 Both the standard and wide lens camera modules use the [same mounting layout](https://datasheets.raspberrypi.com/camera/camera-module-3-standard-mechanical-drawing.pdf). To start with I used [this mount](https://makerworld.com/en/models/167238-bambulab-p1s-raspberry-pi-camera-mount-corner#profileId-183604), however the camera is mounted in the portrait orientation and after many failed attempts to rotate the camera in software I decided it was just easier to [remix the design](https://makerworld.com/en/models/694503-bambu-lab-p1s-raspberry-pi-camera-module-3-mount#profileId-623349) and have it mounted in landscape orientation instead.
 
-![Camera Mount](/assets/img/2025-08-28/internal_512x384.webp)
+![Camera Mount](/assets/img/2025-08-28/internal.webp){: w="512" h="384" }
 
 I printed my mount in PETG and have had no problems with warping.
 
@@ -71,7 +68,8 @@ From memory I used M2 x 5mm screws to attach the camera to the mount. The mount 
 
 The Pi Zero I installed in a [UniPiCase Pi Zero Case](https://www.unipicase.com/products/unipicase-zero/) which I then attached to the side of my P1S using [3M Command Strips](https://www.command.com/3M/en_US/command/how-to-use/picture-hanging-strips/).
 
-![Pi Mount](/assets/img/2025-08-28/external_512x385.webp)
+![Pi Mount](/assets/img/2025-08-28/external.webp){: w="512" h="384" }
+
 
 ## Configuring the Raspberry Pi
 For the operating system I used `Raspberry Pi OS Lite (64-bit)`, which is based on Debian 12 (Bookworm).
@@ -179,8 +177,8 @@ admin@geekhome:~/camera-streamer $ sudo systemctl status camera-streamer.service
 ```
 Now you should find the web interface is up and running on port `8080`:
 
-![Web Interface](/assets/img/2025-08-28/webinterface_512x379.webp)
+![Web Interface](/assets/img/2025-08-28/webinterface.webp){: w="512" h="379" }
 
 Example stream:
 
-![Camera Stream](/assets/img/2025-08-28/stream_512x288.webp)
+![Camera Stream](/assets/img/2025-08-28/stream.webp){: w="512" h="288" }
