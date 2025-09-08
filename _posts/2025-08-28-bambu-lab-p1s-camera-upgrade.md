@@ -22,6 +22,10 @@ I started looking into alternative camera options and the [Raspberry Pi Camera M
 
 The Raspberry Pi cameras give you the choice of the standard lens or the wide lens, the field of view being 66 degrees vs 102 degrees, the videos below will give you a better real-world idea:
 
+
+{% include embed/youtube.html id='-XO-tcB5v0s' %}
+
+
 #### Standard Lens
 
 <div style="text-align:center;">
