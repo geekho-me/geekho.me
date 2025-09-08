@@ -41,7 +41,7 @@ Personally I went with the standard lens. I tend to print small to medium prints
 
 Both the standard and wide lens camera modules use the [same mounting layout](https://datasheets.raspberrypi.com/camera/camera-module-3-standard-mechanical-drawing.pdf). To start with I used [this mount](https://makerworld.com/en/models/167238-bambulab-p1s-raspberry-pi-camera-mount-corner#profileId-183604), however the camera is mounted in the portrait orientation and after many failed attempts to rotate the camera in software I decided it was just easier to [remix the design](https://makerworld.com/en/models/694503-bambu-lab-p1s-raspberry-pi-camera-module-3-mount#profileId-623349) and have it mounted in landscape orientation instead.
 
-![Camera Mount](/assets/img/2025-08-28/internal.webp){: w="512" h="384" }
+![Camera Mount](/assets/img/2025-08-28/internal.webp){: width="512" height="384" }
 
 I printed my mount in PETG and have had no problems with warping.
 
@@ -68,7 +68,7 @@ From memory I used M2 x 5mm screws to attach the camera to the mount. The mount 
 
 The Pi Zero I installed in a [UniPiCase Pi Zero Case](https://www.unipicase.com/products/unipicase-zero/) which I then attached to the side of my P1S using [3M Command Strips](https://www.command.com/3M/en_US/command/how-to-use/picture-hanging-strips/).
 
-![Pi Mount](/assets/img/2025-08-28/external.webp){: w="512" h="384" }
+![Pi Mount](/assets/img/2025-08-28/external.webp){: width="512" height="384" }
 
 
 ## Configuring the Raspberry Pi
@@ -177,8 +177,8 @@ admin@geekhome:~/camera-streamer $ sudo systemctl status camera-streamer.service
 ```
 Now you should find the web interface is up and running on port `8080`:
 
-![Web Interface](/assets/img/2025-08-28/webinterface.webp){: w="512" h="379" }
+![Web Interface](/assets/img/2025-08-28/webinterface.webp){: width="512" height="379" }
 
 Example stream:
 
-![Camera Stream](/assets/img/2025-08-28/stream.webp){: w="512" h="288" }
+![Camera Stream](/assets/img/2025-08-28/stream.webp){: width="512" height="288" }
