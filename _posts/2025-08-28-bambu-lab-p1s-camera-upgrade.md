@@ -8,6 +8,7 @@ description: "Practical guide to upgrading the Bambu Lab P1S chamber camera usin
 keywords: ["Bambu Lab P1S", "P1S camera upgrade", "Raspberry Pi Camera Module 3", "Raspberry Pi Zero 2 W", "camera-streamer", "libcamera", "IMX708", "OctoPrint", "Obico", "MJPEG stream", "3D printing", "Raspberry Pi OS Bookworm"]
 image: /assets/img/2025-08-28/bambulab-p1s-social-1200x630.jpg
 image_alt: "Bambu Lab P1S Camera Upgrade"
+comments: true
 ---
 
 ## Introduction

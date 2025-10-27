@@ -8,6 +8,7 @@ description: "Enable RTSP and ONVIF on TP-Link Tapo cameras with step-by-step in
 keywords: ["camera", "cctv", "tp-link", "tapo", "c100", "webcam", "rtsp"]
 image: /assets/img/2025-09-01/tapo-rtsp-social-1200x630.jpg
 image_alt: "How to enable RTSP on TP-Link Tapo cameras"
+comments: true
 ---
 
 ## Introduction

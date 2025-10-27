@@ -8,6 +8,7 @@ description: "Comprehensive guide to flashing the Sonoff S26 smart plug with Tas
 keywords: ["Sonoff S26", "Tasmota firmware", "smart plug", "ESP8266", "flashing guide", "home automation", "soldering", "WiFi plug", "cloud-free"]
 image: /assets/img/2019-01-06/sonoff-s26-social-1200x630.jpg
 image_alt: "How to flash the Sonoff S26 with Tasmota"
+comments: true
 ---
 
 ## Introduction

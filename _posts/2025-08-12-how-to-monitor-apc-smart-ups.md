@@ -8,6 +8,7 @@ description: "Step-by-step guide to monitoring an APC Smart-UPS 1500 using a Ras
 keywords: ["APC Smart-UPS", "Raspberry Pi", "NUT", "Network UPS Tools", "UPS monitoring", "Modbus", "Linux", "infrastructure"]
 image: /assets/img/2025-08-12/apc-smartups-1500-social-1200x630.jpg
 image_alt: "How to monitor APC Smart-UPS 1500"
+comments: true
 ---
 
 ## Introduction
