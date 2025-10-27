@@ -8,6 +8,7 @@ description: "How to fix the NanoKVM Pro WiFi"
 keywords: ["nanokvm", "nanokvm-pro", "fix", "wifi"]
 image: /assets/img/2025-10-26/nanokvmpro-header-1230x630.webp
 image_alt: "NanoKVM Pro Desk"
+comments: true
 ---
 
 ## Introduction
