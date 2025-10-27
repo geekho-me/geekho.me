@@ -1,11 +1,11 @@
 ---
-title: "How To: Hotfixing the NanoKVM Pro to get Wifi working"
+title: "How To: Hotfixing the NanoKVM Pro to get WiFi working"
 date: 2025-10-26 12:00:00 +0000
-last_modified_at: 2025-10-26
+last_modified_at: 2025-10-27
 categories: [how-to, infrastructure]
 tags: [how-to, infrastructure, iot, nanokvm]
 description: "How to fix the NanoKVM Pro WiFi"
-keywords: ["nanokvm", "nanokvm-pro", "fix"]
+keywords: ["nanokvm", "nanokvm-pro", "fix", "wifi"]
 image: /assets/img/2025-10-26/nanokvmpro-header-1230x630.webp
 image_alt: "NanoKVM Pro Desk"
 ---
@@ -84,7 +84,7 @@ RemainAfterExit=yes
 WantedBy=multi-user.target
 ```
 
-Now backup the Wifi script:
+Now backup the WiFi script:
 
 ```bash
 mv /opt/scripts/wifi.sh /opt/scripts/wifi.sh.old
@@ -247,5 +247,5 @@ systemctl daemon-reload
 systemctl restart wifi.service
 ```
 
-You should now find WiFi is connected and if you reboot the NanoKVM is connects automatically on startup.
+You should now find WiFi is connected and if you reboot the NanoKVM it connects automatically on startup.
 Don't forget to disable SSH!
