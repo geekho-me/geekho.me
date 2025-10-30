@@ -1,12 +1,12 @@
 ---
 title: "How To: Monitor APC Smart-UPS 1500"
 date: 2025-08-12 12:00:00 +0000
-last_modified_at: 2025-09-08
-categories: [how-to, infrastructure, raspberry-pi]
+last_modified_at: 2025-10-30
+categories: [how-to, infrastructure]
 tags: [how-to, infrastructure, ups, raspberry-pi]
 description: "Step-by-step guide to monitoring an APC Smart-UPS 1500 using a Raspberry Pi and Network UPS Tools (NUT). Includes hardware setup, Modbus configuration, and compiling NUT from source."
 keywords: ["APC Smart-UPS", "Raspberry Pi", "NUT", "Network UPS Tools", "UPS monitoring", "Modbus", "Linux", "infrastructure"]
-image: /assets/img/2025-08-12/apc-smartups-1500-social-1200x630.jpg
+image: /assets/img/2025-08-12/apc-smartups-1500-social-1200x630.webp
 image_alt: "How to monitor APC Smart-UPS 1500"
 comments: true
 ---

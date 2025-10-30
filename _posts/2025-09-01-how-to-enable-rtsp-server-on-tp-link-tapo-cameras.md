@@ -1,12 +1,12 @@
 ---
 title: "How To: Enable RTSP Server on TP-Link Tapo Cameras"
 date: 2025-09-01 12:00:00 +0000
-last_modified_at: 2025-09-06
-categories: [how-to, cameras]
+last_modified_at: 2025-10-30
+categories: [how-to, smart-home]
 tags: [cctv, physical security, onvif, rtsp, smart-home]
 description: "Enable RTSP and ONVIF on TP-Link Tapo cameras with step-by-step instructions, example URLs, and security tips for use with VLC, Home Assistant, and Frigate."
 keywords: ["camera", "cctv", "tp-link", "tapo", "c100", "webcam", "rtsp"]
-image: /assets/img/2025-09-01/tapo-rtsp-social-1200x630.jpg
+image: /assets/img/2025-09-01/tapo-rtsp-social-1200x630.webp
 image_alt: "How to enable RTSP on TP-Link Tapo cameras"
 comments: true
 ---

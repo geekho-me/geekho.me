@@ -1,12 +1,12 @@
 ---
 title: "Bambu Lab P1S Camera Upgrade"
 date: 2025-08-28 12:00:00 +0000
-last_modified_at: 2025-09-08
-categories: [how-to, 3d-printing, raspberry-pi]
+last_modified_at: 2025-10-30
+categories: [how-to, 3d-printing]
 tags: [3d-printing, bambu lab, how-to, raspberry-pi]
 description: "Practical guide to upgrading the Bambu Lab P1S chamber camera using a Raspberry Pi Camera Module 3 and a Pi Zero 2 W. Covers mount options, hardware setup, GPU memory tuning, compiling camera-streamer, and exposing an MJPEG stream for OctoPrint/Obico."
 keywords: ["Bambu Lab P1S", "P1S camera upgrade", "Raspberry Pi Camera Module 3", "Raspberry Pi Zero 2 W", "camera-streamer", "libcamera", "IMX708", "OctoPrint", "Obico", "MJPEG stream", "3D printing", "Raspberry Pi OS Bookworm"]
-image: /assets/img/2025-08-28/bambulab-p1s-social-1200x630.jpg
+image: /assets/img/2025-08-28/bambulab-p1s-social-1200x630.webp
 image_alt: "Bambu Lab P1S Camera Upgrade"
 comments: true
 ---
