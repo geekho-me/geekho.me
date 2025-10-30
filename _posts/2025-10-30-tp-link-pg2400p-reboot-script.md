@@ -3,9 +3,9 @@ title: "TP-Link PG2400P Reboot Script"
 date: 2025-10-30 12:00:00 +0000
 last_modified_at: 2025-10-30
 categories: [automation, infrastructure]
-tags: [automation, infrastructure, tp-link, powerline]
-description: "Automating soft reboots of the TP-Link PG2400P G.hn2400 Powerline adapter via its web GUI"
-keywords: ["tp-link", "powerline", "automation", "pg2400p"]
+tags: [iot, pg2400p, powerline, python, tp-link]
+description: "Automating reboots of the TP-Link PG2400P G.hn2400 Powerline adapter via its web GUI"
+keywords: ["automation", "pg2400p", "powerline", "python", "reboot", "script", "tp-link", "webgui"]
 image: /assets/img/2025-10-30/powerline-header-1230x630.webp
 image_alt: "TP-Link PG2400P G.hn2400 Powerline Kit"
 comments: true
@@ -13,25 +13,38 @@ comments: true
 
 # Introduction
 
-I'm using the TP-Link PG2400P G.hn2400 Powerline Kit to extend my network, but it suffers from stability issues. At least once a week, the connection experiences significant packet loss and then drops completely.
+I'm using the TP-Link PG2400P G.hn2400 Powerline Kit to extend my network, which suffers from stability issues. At least once a week, the connection experiences significant packet loss and then drops completely.
 
-To restore connectivity, I have to reboot one of the adapters. This can be done by physically power-cycling it or via the soft reboot option in its Web GUI.
+To restore connectivity, I usually have to reboot one of the adapters. This can be done by physically power-cycling it or via the soft reboot option in its web GUI.
 
-Since the device offers no API or CLI for management, I planned to automate this periodic reboot by creating a script to simulate interaction with its simple Web GUI.
+Since the device offers no API or CLI for management, I decided to automate this periodic reboot by creating a script to simulate interaction with its simple web GUI.
 
 ## Automation
 
-In this example, I have 2 Powerline adapters:
+In this example, I have two Powerline adapters:
 * My remote adapter is at `192.168.1.100`
 * My local adapter is at `192.168.1.101` 
 
 Rebooting either adapter will restore connectivity.
 
-The Web GUI uses only plaintext HTTP, so it was a simple case of performing a packet capture with Wireshark and reviewing the HTTP requests.
+The web GUI uses only plain HTTP (unencrypted), so it was a matter of performing a packet capture with Wireshark and reviewing the HTTP requests.
+
+>This communicates the password in plaintext and uses a weak MD5 hash for the password; 
+>Do not expose this to untrusted networks!
+{: .prompt-danger }
 
 ## Automating Login
 
-To authenticate to the adapter the `TPLINK.GENERAL.LOGIN_PASSWORD` parameter is sent with the lowercase MD5 hash of your password:
+The web GUI uses a MD5 hash (in lowercase) of your password to authenticate. 
+
+You can generate a MD5 hash by doing the following:
+
+```bash
+john@GeekHome:~$ echo -n 'MyStrongPassword' | md5sum | cut -d' ' -f1
+f78e7ab810633ab3a6bbaa49d7d6d5eb
+```
+
+To authenticate to the `TPLINK.GENERAL.LOGIN_PASSWORD` parameter is your MD5 hash:
 
 ```
 POST / HTTP/1.1
@@ -52,7 +65,7 @@ Priority: u=0
 TPLINK.GENERAL.LOGIN_PASSWORD=f78e7ab810633ab3a6bbaa49d7d6d5eb
 ```
 
-On successful authentication the adapter will respond back with a `TOKEN` parameter which is the security token for the session; make a note of this as it will be used in follow up requests. The `ERROR-000` means success:
+On success the adapter responds with a `TOKEN` parameter containing the session token; note this as it's needed in subsequent requests. `ERROR=000` indicates success:
 
 ```
 HTTP/1.1 200 OK
@@ -63,7 +76,7 @@ ERROR=000
 TOKEN=3D5waE0G3nOjTtXv4Wd7m9xmhraO3ZqZ
 ```
 
-On failed authentication attempts and you will get an `ERROR=006` response:
+On failed authentication attempts you will get an `ERROR=006` response:
 
 ```
 HTTP/1.1 200 OK
@@ -77,7 +90,7 @@ LOGIN_TIMES=1
 ## Automating Reboot
 
 Now we have the `TOKEN` parameter we can perform an authenticated reboot. 
-Todo this we make the following request:
+To do this, we make the following request:
 
 ```
 POST /?_t=3D5waE0G3nOjTtXv4Wd7m9xmhraO3ZqZ HTTP/1.1
@@ -98,7 +111,7 @@ Priority: u=0
 SYSTEM.GENERAL.HW_RESET=1
 ```
 
-On success, the adapter will respond with and then reboot:
+On success, the adapter will respond and then reboot:
 
 ```
 HTTP/1.1 200 OK
@@ -110,7 +123,7 @@ ERROR=000
 
 ## One Oddity
 
-Some attempts at authenticating fail the first time, regardless if your password is correct or not, the adapter will respond with a `004` error. Follow up authentication attempts will then work fine. I don't know if this is a result of some buggy session handling or if its using the client connection somehow to maybe seed the RNG?
+Some attempts to authenticate fail the first time; regardless of whether your password is correct, the adapter may respond with `ERROR=004`. Follow-up authentication attempts will then work fine. I don't know if this due to buggy session handling or if the device uses the client connection to seed its RNG.
 
 ```
 HTTP/1.1 200 OK
@@ -124,7 +137,7 @@ ERROR=004
 
 I have created a [Python script](https://github.com/geekho-me/PG2400P-Reboot) which automates the process of soft rebooting the Powerline Adapter and handling the `004` error if it occurs:
 
-```
+```bash
 john@GeekHome:~$ python router_reboot.py --ip 192.168.1.101 --password MyStrongPassword
 [+] Target router: http://192.168.1.101
 [+] Preflight warm-up...
