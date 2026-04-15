@@ -4,7 +4,7 @@ date: 2025-10-26 12:00:00 +0000
 last_modified_at: 2025-10-27
 categories: [how-to, infrastructure]
 tags: [how-to, infrastructure, iot, nanokvm]
-description: "How to fix the NanoKVM Pro WiFi"
+description: "Step-by-step guide to fixing broken WiFi on the NanoKVM Pro Desk running firmware v1.0.7. Includes a shell script workaround for faulty default scripts affecting both WebGUI and Access Point modes."
 keywords: ["nanokvm", "nanokvm-pro", "fix", "wifi"]
 image: /assets/img/2025-10-26/nanokvmpro-header-1230x630.webp
 image_alt: "NanoKVM Pro Desk"
