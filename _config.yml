@@ -227,3 +227,10 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+
+# Exclude tag and category archive pages from sitemap
+# (these pages use noindex, so they should not be in the sitemap)
+sitemap:
+  exclude:
+      - /tags/*
+          - /categories/*
