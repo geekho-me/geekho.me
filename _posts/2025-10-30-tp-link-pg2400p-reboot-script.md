@@ -11,7 +11,7 @@ image_alt: "TP-Link PG2400P G.hn2400 Powerline Kit"
 comments: true
 ---
 
-# Introduction
+## Introduction
 
 I'm using the TP-Link PG2400P G.hn2400 Powerline Kit to extend my network, which suffers from stability issues. At least once a week, the connection experiences significant packet loss and then drops completely.
 
