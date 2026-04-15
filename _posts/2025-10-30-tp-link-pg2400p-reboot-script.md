@@ -4,7 +4,7 @@ date: 2025-10-30 12:00:00 +0000
 last_modified_at: 2025-10-30
 categories: [automation, infrastructure]
 tags: [iot, pg2400p, powerline, python, tp-link]
-description: "Automating reboots of the TP-Link PG2400P G.hn2400 Powerline adapter via its web GUI"
+description: "Python script to automate soft reboots of the TP-Link PG2400P G.hn2400 Powerline adapter. Reverse-engineered from its web GUI using Wireshark, with MD5 authentication and handling for intermittent connectivity dropouts."
 keywords: ["automation", "pg2400p", "powerline", "python", "reboot", "script", "tp-link", "webgui"]
 image: /assets/img/2025-10-30/powerline-header-1230x630.webp
 image_alt: "TP-Link PG2400P G.hn2400 Powerline Kit"
